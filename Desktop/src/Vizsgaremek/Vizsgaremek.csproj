@@ -3,14 +3,25 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
-    <UseWPF>true</UseWPF>
-    <Authors>Nagygéci Noémi</Authors>
-    <Company>Vasvári</Company>
-    <Description>Kilépés gomb működik</Description>
+	  <PublishSingleFile>true</PublishSingleFile>
+	  <SelfContained>false</SelfContained>
+	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	  <UseWPF>true</UseWPF>
+	  <Version>0.0.1</Version>
+	  <Authors>Gyuris Csaba</Authors>
+	  <Company>Vasvári</Company>
+	  <Product />
+	  <Description>Kilépés gomb működik</Description>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Icons\exit.png" />
+    <None Remove="Icons\back_icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Icons\exit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -24,19 +35,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Icons\exit.png">
+    <Resource Include="Icons\back_icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
-
-	<PropertyGroup>
-		<OutputType>WinExe</OutputType>
-		<TargetFramework>net5.0-windows</TargetFramework>
-		<PublishSingleFile>true</PublishSingleFile>
-		<SelfContained>false</SelfContained>
-		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
-		<UseWPF>true</UseWPF>
-	</PropertyGroup>
-
 
 </Project>

@@ -9,5 +9,4 @@
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
         <TextBlock x:Name="WelcomeText" Text="Üdvözöljük a programban!"></TextBlock>
     </StackPanel>
-
 </UserControl>

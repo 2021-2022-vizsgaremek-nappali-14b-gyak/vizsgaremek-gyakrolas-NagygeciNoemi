@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+
 using Vizsgaremek.Navigation;
 using Vizsgaremek.Pages;
 
@@ -22,21 +23,21 @@ namespace Vizsgaremek
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        
         public MainWindow()
         {
             InitializeComponent();
-            //Statikus osztály a Navigate
-            //Eltárolja a nyitó ablakot, hogy azon tudjuk mósodítani a "page"-eket
+            // Statikus osztály a Navigate
+            // Eltárolja a nyitó ablakt, hogy azon tudjuk módosítani a "page"-ket
             Navigate.mainWindow = this;
-            //Létrehozzuk a nyitó "UserControl"WelcomePage
+            // Létrehozzuk a nyitó "UsuerControl" (WelcomPage)
             WelcomePage welcomePage = new WelcomePage();
-            //Megjelenítjük a WelcomePage-et
+            // Megjelnítjük a WelcomePage-t
             Navigate.Navigation(welcomePage);
         }
 
         /// <summary>
-        /// bal egér gomb felengedve
+        /// ListView elemen bal egér gomb fel lett engedve
         /// </summary>
         /// <param name="sender">ListView amin megnyomtuk a bal egér gombot</param>
         /// <param name="e"></param>
@@ -44,17 +45,25 @@ namespace Vizsgaremek
         {
             ListView lvMenu = sender as ListView;
             ListViewItem lvMenuItem = lvMenu.SelectedItem as ListViewItem;
+            //ListViewItem lvMenuItem = (ListViewItem) lvMenu.SelectedItem;
 
-            if(lvMenuItem != null)
+            if (lvMenuItem != null)
             {
                 // x:Name tulajdonságot vizsgáljuk
                 switch (lvMenuItem.Name)
                 {
-                    case "lvIExit":
+                    case "lviExit":
                         Close();
                         break;
+                    case "lviProgramVersion":
+                        ProgramVersion programVersion = new ProgramVersion();
+                        Navigate.Navigation(programVersion);
+                        break;
                 }
+                
             }
         }
+
+
     }
 }
