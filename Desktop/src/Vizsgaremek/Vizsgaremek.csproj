@@ -7,11 +7,11 @@
 	  <SelfContained>false</SelfContained>
 	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
 	  <UseWPF>true</UseWPF>
-	  <Version>0.0.1</Version>
+	  <Version>0.0.3.0</Version>
 	  <Authors>Gyuris Csaba</Authors>
 	  <Company>Vasvári</Company>
 	  <Product />
-	  <Description>Kilépés gomb működik</Description>
+	  <Description>Program verzió navigáció működik</Description>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,8 +27,6 @@
   <ItemGroup>
     <Folder Include="Controls\" />
     <Folder Include="Converters\" />
-    <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="Validations\" />
     <Folder Include="Resources\" />
     <Folder Include="Repositories\" />
