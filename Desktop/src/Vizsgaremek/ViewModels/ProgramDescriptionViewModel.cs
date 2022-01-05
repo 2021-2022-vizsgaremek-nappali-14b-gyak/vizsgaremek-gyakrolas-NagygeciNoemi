@@ -7,22 +7,22 @@ using Vizsgaremek.Models;
 
 namespace Vizsgaremek.ViewModels
 {
-    class ProgramAuthorsViewModels
+    class ProgramDescriptionViewModel
     {
         private ProgramInfo programInfo;
-        public string Authors
+        public string Description
         {
             get
             {
-                return programInfo.Authors.ToString();
+                return programInfo.Description.ToString();
             }
             set
             {
-                Authors = value;
+                Description = value;
             }
         }
 
-        public ProgramAuthorsViewModels()
+        public ProgramDescriptionViewModel()
         {
             programInfo = new ProgramInfo();
         }

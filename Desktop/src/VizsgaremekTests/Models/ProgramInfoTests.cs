@@ -57,18 +57,19 @@ namespace Vizsgaremek.Models.Tests
         }
 
         [TestMethod()]
-        public void ProgramInfoTestAuthors()
+        public void ProgramInfoTestDescription()
         {
             //arrange
             ProgramInfo programInfo = new ProgramInfo();
-            string expected = "Nagygéci Noémi";
+            string expected = "A program fejlesztés alatt";
 
             // act
-            string actual = programInfo.Authors.ToString();
+            string actual = programInfo.Description.ToString();
 
             // assert
-            Assert.AreEqual(expected, actual, "Author is not Nagygéci Noémi");
+            Assert.AreEqual(expected, actual, "Description is not A program fejlesztés alatt");
 
         }
+
     }
 }
