@@ -25,5 +25,51 @@ namespace Vizsgaremek.Models.Tests
             // assert
             Assert.AreEqual(expected, actual, "Version is not 0.0.3.0");
         }
+
+        [TestMethod()]
+        public void ProgramInfoTestTitle()
+        {
+            //arrange
+            ProgramInfo programInfo = new ProgramInfo();
+            string expected = "Vizsgaremek";
+
+            // act
+            string actual = programInfo.Title.ToString();
+
+            // assert
+            Assert.AreEqual(expected, actual, "Title is not Vizsgaremek");
+
+        }
+
+        [TestMethod()]
+        public void ProgramInfoTestCompany()
+        {
+            //arrange
+            ProgramInfo programInfo = new ProgramInfo();
+            string expected = "Vasvári";
+
+            // act
+            string actual = programInfo.Company.ToString();
+
+            // assert
+            Assert.AreEqual(expected, actual, "Title is not Vasvári");
+
+        }
+
+        [TestMethod()]
+        public void ProgramInfoTestDescription()
+        {
+            //arrange
+            ProgramInfo programInfo = new ProgramInfo();
+            string expected = "A program fejlesztés alatt";
+
+            // act
+            string actual = programInfo.Description.ToString();
+
+            // assert
+            Assert.AreEqual(expected, actual, "Description is not A program fejlesztés alatt");
+
+        }
+
     }
 }
