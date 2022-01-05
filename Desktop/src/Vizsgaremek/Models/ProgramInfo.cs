@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Octokit;
+using System.Diagnostics;
+
+
 using System.Reflection;
 
 namespace Vizsgaremek.Models
@@ -40,6 +44,8 @@ namespace Vizsgaremek.Models
 
             foreach (Attribute attr in Attribute.GetCustomAttributes(assembly))
             {
+                GetGithubCollaboratorsName();
+
                 if (attr.GetType() == typeof(AssemblyTitleAttribute))
                     title = ((AssemblyTitleAttribute)attr).Title;
                 else if (attr.GetType() == typeof(AssemblyDescriptionAttribute))
@@ -50,5 +56,31 @@ namespace Vizsgaremek.Models
             }
 
         }
+
+        private async void GetGithubCollaboratorsName()
+        {
+            string reponame = "NagygeciNoemi";
+            int repoId = 434305942;
+            var client = new GitHubClient(new ProductHeaderValue(reponame));
+
+            // fejlesztők meghatározása
+            try
+            {
+                var collaborators = await client.Repository.GetAllContributors(repoId);
+                string collaboratorsName = string.Empty;
+                foreach (var collaborator in collaborators)
+                {
+                    string collaboratorLoginName = collaborator.Login;
+                    var user = await client.User.Get(collaboratorLoginName);
+                    collaboratorsName += user.Name + " (" + user.Login + ") ";
+                }
+                authors = collaboratorsName;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
+        }
+
     }
 }

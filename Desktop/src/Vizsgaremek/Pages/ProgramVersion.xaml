@@ -11,27 +11,30 @@
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top">
             <Image Source="/Icons/back_icon.png" Height="48" PreviewMouseLeftButtonUp="Image_PreviewMouseLeftButtonUp" />
         </StackPanel>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20 5 20 5">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20 5 20 5" Width="600">
             <TextBlock x:Name="WelcomeText" Text="Program verzió"></TextBlock>
             <StackPanel Orientation="Horizontal">
                 <Label>Program verzió:</Label>
-                <TextBox x:Name="txtVersion" Text="{Binding Path=Version}" IsReadOnly="True"/>
+                <TextBlock x:Name="txtVersion" FontWeight="Bold" Text="{Binding Path=Version}" VerticalAlignment="Center"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label>Program címe:</Label>
-                <TextBox x:Name="txtTitle" Text="{Binding Path=Title}" IsReadOnly="True"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label>Program szerkesztője:</Label>
-                <TextBox x:Name="txtAuthors" Text="{Binding Path=Authors}" IsReadOnly="True"/>
+                <TextBlock x:Name="txtTitle" FontWeight="Bold" Text="{Binding Path=Title}" VerticalAlignment="Center"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label>Program leírása:</Label>
-                <TextBox x:Name="txtDescription" Text="{Binding Path=Description}" IsReadOnly="True"/>
+                <TextBlock x:Name="txtDescription" FontWeight="Bold" Text="{Binding Path=Description}" VerticalAlignment="Center"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label>Cég:</Label>
-                <TextBox x:Name="txtCompany" Text="{Binding Path=Company}" IsReadOnly="True"/>
+                <TextBlock x:Name="txtCompany" FontWeight="Bold" Text="{Binding Path=Company}" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label>Fejlesztők:</Label>
+                <TextBlock x:Name="txtAuthors" FontWeight="Bold" Text=""  VerticalAlignment="Center" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btAuthors" Content="Fejlesztők adatainak lekérdezése..." Click="btAuthors_Click"></Button>
             </StackPanel>
         </StackPanel>
     </StackPanel>

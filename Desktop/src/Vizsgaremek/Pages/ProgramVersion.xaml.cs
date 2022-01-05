@@ -39,5 +39,10 @@ namespace Vizsgaremek.Pages
             // Statikus osztály ezért az osztály nevét írjuk
             Navigate.Navigation(welcomePage);
         }
+
+        private void btAuthors_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
