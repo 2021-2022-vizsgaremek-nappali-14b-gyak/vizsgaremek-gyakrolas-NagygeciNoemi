@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Vizsgaremek.Views.Navigation;
 
 namespace Vizsgaremek.Views.Pages
 {
@@ -23,6 +24,14 @@ namespace Vizsgaremek.Views.Pages
         public DatabaseSourcePage()
         {
             InitializeComponent();
+        }
+
+        private void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            WelcomePage welcomePage = new WelcomePage();
+            // Statikus osztály ezért az osztály nevét írjuk
+            Navigate.Navigation(welcomePage);
+
         }
     }
 }
