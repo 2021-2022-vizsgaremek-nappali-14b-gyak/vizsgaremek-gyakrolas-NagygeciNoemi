@@ -32,6 +32,9 @@ namespace Vizsgaremek
         {
             mainWindowViewModel = new MainWindowViewModel();
             databaseSourceViewModel = new DatabaseSourceViewModel();
+
+            mainWindowViewModel.SelectedSource =databaseSourceViewModel.SelectedDatabaseSource;
+
             InitializeComponent();
             this.DataContext = mainWindowViewModel;
             // Statikus osztály a Navigate
