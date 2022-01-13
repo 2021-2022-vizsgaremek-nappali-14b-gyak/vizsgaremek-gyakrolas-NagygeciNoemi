@@ -16,10 +16,10 @@
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="20 0 0 10">
             <Label>Válasszon adatbázist:</Label>
-            <ListBox x:Name="listDatabaseSources" Height="80" Width="200" ItemsSource="{Binding Path=DisplayedDatabaseSources}" SelectedItem="{Binding Path=SelectedDatabaseSources}"></ListBox>
+                <ListBox x:Name="listDatabaseSources" Height="80" Width="200" ItemsSource="{Binding Path=DisplayedDatabaseSource}" SelectedItem="{Binding Path=SelectedDatabaseSource}"></ListBox>
                 <StackPanel Orientation="Horizontal">
                     <Label>A választott adatbázis:</Label>
-                    <TextBlock FontWeight="Bold" x:Name="txtSelectedDatabaseSource" Text="{Binding Path=SelectedDatabaseSources}"></TextBlock>
+                    <TextBlock FontWeight="Bold" x:Name="txtSelectedDatabaseSource" Text="{Binding Path=SelectedDatabaseSource}" Margin="2 5 2 2"></TextBlock>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
