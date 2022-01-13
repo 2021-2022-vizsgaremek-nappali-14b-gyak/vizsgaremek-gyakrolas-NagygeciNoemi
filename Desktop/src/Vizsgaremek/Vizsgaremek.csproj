@@ -16,12 +16,7 @@
 
   <ItemGroup>
     <None Remove="Icons\back_icon.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Icons\exit.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Remove="Icons\exit.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,11 +24,13 @@
     <Folder Include="Converters\" />
     <Folder Include="Validations\" />
     <Folder Include="Resources\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Icons\back_icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\exit.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
