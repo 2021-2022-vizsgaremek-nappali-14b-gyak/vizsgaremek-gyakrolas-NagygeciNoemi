@@ -14,28 +14,35 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using Vizsgaremek.Views.Navigation;
+
 using Vizsgaremek.ViewModels;
 
 namespace Vizsgaremek.Views.Pages
 {
     /// <summary>
-    /// Interaction logic for DatabaseSourcePage.xaml
+    /// Interaction logic for ProgramVersion.xaml
     /// </summary>
-    public partial class DatabaseSourcePage : UserControl
+    public partial class ProgramInfo : UserControl
     {
-        DatabaseSourceViewModel databaseSourceViewModel;
-
-        public DatabaseSourcePage(DatabaseSourceViewModel databaseSourceViewModel)
+        ProgramInfoViewModel programVersionViewModel;
+        public ProgramInfo()
         {
-            this.databaseSourceViewModel = databaseSourceViewModel;
             InitializeComponent();
-            this.DataContext = databaseSourceViewModel;
+            programVersionViewModel = new ProgramInfoViewModel();
+            this.DataContext = programVersionViewModel;
         }
 
+        // Vissza ikonra kattintva visszatér a nyitóoldalra
         private void Image_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             WelcomePage welcomePage = new WelcomePage();
+            // Statikus osztály ezért az osztály nevét írjuk
             Navigate.Navigation(welcomePage);
+        }
+
+        private void btAuthors_Click(object sender, RoutedEventArgs e)
+        {
+            txtAuthors.Text = programVersionViewModel.Authors;
         }
     }
 }
