@@ -18,6 +18,5 @@ namespace Vizsgaremek.Models
         {
             this.DbSource = DbSource.NONE;
         }
-
     }
 }
